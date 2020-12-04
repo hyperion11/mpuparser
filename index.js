@@ -7,6 +7,10 @@ const { Parser } = bp;
 const [src, dstDir] = process.argv.slice(2);
 
 // logger sets FS_SEL to 3: range is ±2000°/s, sensitivity is 16.4°/s
+//0x00 ± 250 °/s 131 LSB/°/s
+//0x01 ± 500 °/s 65.5 LSB/°/s
+//0x02 ± 1000 °/s 32.8 LSB/°/s
+//0x03 ± 2000 °/s 16.4 LSB/°/s
 const GYRO_SCALE = 16.4; 
 
 const convertRawToRadiansPerSecond = (raw) => (raw / GYRO_SCALE) * (Math.PI / 180);
